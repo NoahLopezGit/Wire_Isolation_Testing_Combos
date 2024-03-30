@@ -11,8 +11,13 @@ def tested_combos(pins, combos):
 def remove_combos(tested_combos, combos):
     return [combo for combo in combos if combo not in tested_combos]
 
+def check_answer(sets, combos):
+    for _set in sets:
+        combos = remove_combos(tested_combos(_set, combos), combos)
+    return combos == []
+
 # generate all pairs for a given pin count
-pin_count = 50
+pin_count = 200
 combos = list(itertools.combinations(range(1,pin_count+1),2))
 
 #iterate over each pin, add pin if it increases the tested combos
@@ -33,3 +38,4 @@ while len(combos)>0:
 
 print(sets)
 print(len(sets))
+print(f"Checking sets against combos: {check_answer(sets, list(itertools.combinations(range(1,pin_count+1),2)))}")
