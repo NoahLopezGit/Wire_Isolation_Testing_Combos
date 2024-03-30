@@ -12,8 +12,8 @@ def remove_combos(tested_combos, combos):
     return [combo for combo in combos if combo not in tested_combos]
 
 # generate all pairs for a given pin count
-pin_count=50
-combos =  list(itertools.combinations(range(1,pin_count),2))
+pin_count=100
+combos =  list(itertools.combinations(range(1,pin_count+1),2))
 
 #iterate over each pin, add pin if it increases the tested combos
 #stop if end of pins is reached or pin_count//2 pins are added
