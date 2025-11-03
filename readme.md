@@ -10,9 +10,11 @@ Consider the following 8-wire harness. Two wires (e.g., 7 and 8) are considered 
 
 To verify full isolation, each unique wire pair must be individually tested (e.g., 1-2, 1-3, …).
 Because isolation pairs are symmetric (1-2 ≡ 2-1), the number of unique tests is
+
 $$
-\frac{n(n-1)}{2},
+\frac{n(n-1)}{2}
 $$
+
 which still scales as **O(n²)**.
 
 For a 50-pin harness, this results in 1,225 individual tests. When each test-such as an insulation resistance measurement-takes about one minute or more, a complete sequence can require several days.
@@ -26,7 +28,7 @@ A dramatic reduction in complexity can be achieved by **testing groups of wires 
 [Method of performing a dielectric voltage-withstand test on a wire harness](https://patents.google.com/patent/US20020171434A1/en)
 ![](https://patentimages.storage.googleapis.com/c6/e8/2c/de497f8c3505b4/US20020171434A1-20021121-D00000.png)
 
-Each wire harness can be modeled as a **set of nodes**, since each wire is continuous between its two ends. The set can be divided into two electrically isolated groups—for example:
+Each wire harness can be modeled as a **set of nodes**, since each wire is continuous between its two ends. The set can be divided into two electrically isolated groups, for example:
 
 A = [1, 2, 3, 4] and B = [5, 6, 7, 8]
 
@@ -88,14 +90,17 @@ Since each index’s binary encoding differs from every other in at least one po
 ## Complexity Reduction
 
 The required number of tests equals the number of bits needed to represent the largest index, i.e.
+
 $$
 \lceil \log_2 n \rceil.
 $$
 
 For a 50-wire harness:
+
 $$
 \lceil \log_2 50 \rceil = 6.
 $$
+
 Thus, the total number of tests drops from 1225 to just **6**.
 
 In the context of dielectric withstand or insulation resistance testing, this translates to reducing total test duration from **multiple days to mere minutes**.
