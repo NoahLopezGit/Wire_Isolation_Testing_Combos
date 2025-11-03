@@ -23,6 +23,7 @@ For a 50-pin harness, this results in 1,225 individual tests. When each test-suc
 
 A dramatic reduction in complexity can be achieved by **testing groups of wires shorted together** against other groups, rather than testing each pair individually. The figure below (from a dielectric withstand test patent) demonstrates this principle:
 
+[Method of performing a dielectric voltage-withstand test on a wire harness](https://patents.google.com/patent/US20020171434A1/en)
 ![](https://patentimages.storage.googleapis.com/c6/e8/2c/de497f8c3505b4/US20020171434A1-20021121-D00000.png)
 
 Each wire harness can be modeled as a **set of nodes**, since each wire is continuous between its two ends. The set can be divided into two electrically isolated groups—for example:
